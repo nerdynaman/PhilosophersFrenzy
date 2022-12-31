@@ -1,0 +1,6 @@
+for original:
+1) With strict ordering(B)- five threads are created which resemble the philosophers(0..4), further philosopher 0 and 1 starts eating together and then after eating for some time they both start thinking together. They at the same time ask philosophers right of them to eat and so on, cycle continues inifinitely.
+2) With use of semaphores(A)- five threads are created which resemble the philosophers(0..4) and five semaphores which resemvle forks, further philosophers know the fork numbers from which they want to eat. All the philosophers before picking fork will need to acquire the semaphore and after eating they will release the semaphore. If two philosophers at same time try to acquire the same semaphore then one of them will wait for the other to release the semaphore.
+
+for modified:
+It is same at part B but with the addition of a two new bowls which are represented by two another semaphore where each philospher first check that if first bowl is available then he will eat from it and if not then he will eat from second bowl, if second is also busy then he will wait for second to be free. 
